@@ -1,0 +1,177 @@
+@charset "EUC-JP";
+
+/*
+ *
+ * Asynchronicity
+ *
+ */
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #37444E;
+	color: #fcffff;
+}
+
+a:link,a:visited {
+	text-decoration: none;
+}
+
+a:link {
+	color: #8DA1B1;
+}
+
+a:visited {
+	color: #37444E;
+	text-decoration: underline;
+}
+
+a.keyword:link,a.keyword:visited,
+a.keyword:hover,a.focus {
+	cursor: help;
+	color: #999;
+}
+
+/*
+#simple-header {
+	display: none;
+}
+
+form.search {
+}
+
+ul.menu {
+}
+*/
+
+h1,h2 {
+	font-family: serif;
+}
+
+h1 {
+	position: absolute;
+	right: 10pt;
+	top: 50;
+	width: 1em;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+	text-shadow: 1px 1px 3px #000;
+	font-size: 48pt;
+}
+
+h1::first-letter {
+	color: #9D2D25;
+}
+
+h2 {
+	font-weight: normal;
+	font-size: 150%;
+	font-style: italic;
+}
+
+table,blockquote,pre,ul,ol,dl {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+blockquote {
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 15px;
+	border: solid 3px #000;
+	border-left-color: #333;
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 1px;
+}
+
+td,th {
+	padding: 5px 10px;
+	border: solid 1px;
+}
+
+th {
+	border-color: #777 #000 #000 #777;
+	font-weight: normal;
+	background-color: #666;
+}
+
+td {
+	border-color: #333 #000 #000 #333;
+	background-color: #222;
+}
+
+div.hatena-body {
+	margin: 50px 70pt 50px 0;
+	padding: 20px;
+	border: solid 1px #000;
+	border-left-style: none;
+	-moz-box-shadow: 0 0 20px #000;
+	-webkit-box-shadow: 0 0 20px #000;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	background-color: #000;
+}
+
+/*
+div.hatena-module {
+	display: none;
+}
+*/
+
+div.calendar {
+	text-align: center;
+}
+
+div.day {
+	margin: 50px 0;
+}
+
+div.section {
+	margin: 25px 0;
+}
+
+/* Syntax Hilight */
+pre.syntax-highlight {
+	line-height: 1;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 15px;
+	border: solid 2px #333;
+	-moz-border-radius: 10px;
+	-webkit-border-radius 10px;
+	font-family: monospace;
+}
+
+.synPreProc {
+	color: #CC887A;
+}
+
+.synType {
+	color: #CCB570;
+}
+
+.synStatement {
+	color: #A3CC7A;
+}
+
+.synIdentifier {
+	color: #99CCBB;
+}
+
+.synConstant {
+	color: #7A96CC;
+}
+
+.synComment {
+	color: #2E3735;
+}
+
+/* vim: set shiftwidth=2 tabstop=2 softtabstop=2 */

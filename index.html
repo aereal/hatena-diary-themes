@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<title>空中現実思考</title>
+	</head>
+	<body>
+		<div id="simple-header">
+			<a href="http://www.hatena.ne.jp/"><img src="images/hatena-simple_bl.gif" alt="Hatena::" title="Hatena::" id="logo-hatena"></a>
+			<a href="/"><img src="images/diary-simple_bl.gif" alt="Diary" title="Diary" id="logo-diary"></a>
+			<form method="get" action="search" class="search-form">
+				<input name="word" type="text" class="search-word" value="">
+				<input name="diary" type="submit" class="search-button" value="日記">
+				<input name="submit" type="submit" class="search-button" value="検索">
+			</form>
+			<ul class="menu">
+				<li>
+					<a href="aereal/">ブログトップ</a>
+				</li>
+				<li>
+					<a href="aereal/archive">記事一覧</a>
+				</li>
+				<li>
+					<a id="editlink" href="aereal/#edit_in_place">記事を書く</a>
+				</li>
+				<li>
+					<a href="aereal/admin">管理</a>
+				</li>
+				<li>
+					<a href="logout">ログアウト</a>
+				</li>
+				<li>
+					<a href="http://hatenadiary.g.hatena.ne.jp">ヘルプ</a>
+				</li>
+			</ul>
+		</div>
+		<h1>
+			<!--a href="aereal/"-->空中現実思考<!--/a-->
+		</h1>
+		<div class="hatena-body">
+			<div class="hatena-module hatena-module-profile">
+				<div class="hatena-moduletitle">プロフィール</div>
+				<div class="hatena-modulebody">
+					<div class="hatena-profile">
+						<p class="hatena-profile-image">
+							<a href="aereal/about">
+								<img src="profile.gif" alt="aereal" />
+							</a>
+						</p>
+						<p class="hatena-profile-id">
+							<a href="aereal/about">aereal</a>
+						</p>
+						<p class="hatena-profile-body">なにもない</p>
+					</div>
+				</div>
+			</div>
+			<div id="pager-top" class="calendar">
+				<a rel="prev" href="aereal/?of=7" class="prev">&lt;前の7日分</a>&nbsp;<span class="delimiter">|</span>&nbsp;<a rel="next" href="aereal/?of=0" class="next">次の7日分&gt;</a>&nbsp;<span id="edit-in-place-add"><span class="delimiter">|</span> <a href="">記事を書く</a></span>
+			</div>
+			<div id="days">
+				<div class="day">
+					<h2>
+						<a href="aereal/20101001"><span class="date">October 01, 2010</span></a>
+					</h2>
+					<div class="body">
+						<div class="section">
+							<h3 class="title">
+								<a href="aereal/20101001/hogehoge" name="hogehoge"></a>
+							</h3>
+							<p class="sectionheader">
+								<span class="sectioncategory">
+									<a href="aereal/searchdiary?word=foo" class="sectioncategory">foo</a> |
+								</span>
+								<span class="timestamp">12:34</span> |
+								<span class="edit">
+									<a href="" class="editinplace">編集</a>
+								</span>
+							</p>
+<pre class="syntax-highlight">
+<span class="synPreProc">class </span><span class="synType">Vector</span>
+
+  <span class="synStatement">attr_accessor</span> <span class="synIdentifier">:x</span>, <span class="synIdentifier">:y</span>
+
+  <span class="synPreProc">def </span><span class="synIdentifier">initialize</span>(x, y)
+    <span class="synIdentifier">@x</span> = x
+    <span class="synIdentifier">@y</span> = y
+  <span class="synPreProc">end</span>
+
+  <span class="synPreProc">def </span><span class="synIdentifier">map</span>(*args)
+    <span class="synIdentifier">Vector</span>.new(*args)
+  <span class="synPreProc">end</span>
+
+  <span class="synPreProc">def </span><span class="synIdentifier">length</span>
+    <span class="synIdentifier">Math</span>.hypot(<span class="synIdentifier">@x</span>, <span class="synIdentifier">@y</span>)
+  <span class="synPreProc">end</span>
+
+  <span class="synStatement">alias</span> magnitude length
+  <span class="synStatement">alias</span> norm      length
+
+  <span class="synPreProc">def </span><span class="synIdentifier">direction</span>
+    cos_theorem(<span class="synIdentifier">@x</span>, <span class="synIdentifier">@y</span>, <span class="synConstant">self</span>.length) / <span class="synIdentifier">@x</span>
+  <span class="synPreProc">end</span>
+
+  <span class="synPreProc">def </span><span class="synIdentifier">in_parallel_with?</span>(other)
+    <span class="synConstant">self</span>.direction == other.direction
+  <span class="synPreProc">end</span>
+
+  <span class="synPreProc">def </span><span class="synIdentifier">-@</span>
+    <span class="synConstant">self</span>.map(-<span class="synIdentifier">@x</span>, -<span class="synIdentifier">@y</span>)
+  <span class="synPreProc">end</span>
+
+  <span class="synPreProc">def </span><span class="synIdentifier">==</span>(other)
+    <span class="synConstant">self</span>.in_parallel_with?(other) &amp;&amp; <span class="synConstant">self</span>.length == other.length
+  <span class="synPreProc">end</span>
+
+  <span class="synPreProc">def </span><span class="synIdentifier">+</span>(other)
+    <span class="synConstant">self</span>.map(<span class="synIdentifier">@x</span> + other.x, <span class="synIdentifier">@y</span> + other.y)
+  <span class="synPreProc">end</span>
+
+  <span class="synPreProc">def </span><span class="synIdentifier">-</span>(other)
+    <span class="synConstant">self</span> + (-other)
+  <span class="synPreProc">end</span>
+
+  <span class="synPreProc">def </span><span class="synIdentifier">*</span>(other)
+    <span class="synStatement">case</span> other
+    <span class="synStatement">when</span> <span class="synIdentifier">Scalar</span>
+      <span class="synConstant">self</span>.__send__(<span class="synIdentifier">:scalar_multiple</span>, other)
+    <span class="synStatement">when</span> <span class="synIdentifier">Vector</span>
+
+      <span class="synConstant">self</span>.__send__(<span class="synIdentifier">:dot_product</span>, other)
+    <span class="synStatement">else</span>
+      <span class="synStatement">raise</span> <span class="synIdentifier">ArgumentError</span>
+    <span class="synStatement">end</span>
+  <span class="synPreProc">end</span>
+
+  <span class="synPreProc">def </span><span class="synIdentifier">scalar_multiple</span>(other)
+    <span class="synConstant">self</span>.map(<span class="synIdentifier">@x</span> * other, <span class="synIdentifier">@y</span> * other)
+  <span class="synPreProc">end</span>
+
+  <span class="synPreProc">def </span><span class="synIdentifier">dot_product</span>(other)
+    <span class="synComment"># ...</span>
+  <span class="synPreProc">end</span>
+
+  <span class="synStatement">private</span>
+  <span class="synPreProc">def </span><span class="synIdentifier">cos_theorem</span>(a, b, c)
+    (c ** <span class="synConstant">2</span> + a ** <span class="synConstant">2</span> - b ** <span class="synConstant">2</span>) / <span class="synConstant">2</span> * a * c
+  <span class="synPreProc">end</span>
+
+<span class="synPreProc">end</span>
+
+<span class="synPreProc">module </span><span class="synType">Scalar</span>; <span class="synPreProc">end</span>
+
+<span class="synIdentifier">Numeric</span>.__send__(<span class="synIdentifier">:extend</span>, <span class="synIdentifier">Scalar</span>)
+</pre>
+							<p>ほげほげほげほげほげほげほげほげほげほげほげほげうはうはうはうはうはうはうはうはうはうはうはほげほげほげほげほげほげほげほげほげうはうはうはうはうはうはうはうはうは自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺ubntu debian centos</p>
+							<p>ほげほげほげほげほげほげほげほげほげほげほげほげうはうはうはうはうはうはうはうはうはうはうはほげほげほげほげほげほげほげほげほげうはうはうはうはうはうはうはうはうは自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺ubntu debian centos</p>
+							<p>ほげほげほげほげほげほげほげほげほげほげほげほげうはうはうはうはうはうはうはうはうはうはうはほげほげほげほげほげほげほげほげほげうはうはうはうはうはうはうはうはうは自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺自殺ubntu debian centos</p>
+							<p>空中現実思考をする君はシークレットボーイ</p>
+							<p>空中現実思考をする君はシークレットボーイ</p>
+							<p>空中現実思考をする君はシークレットボーイ</p>
+							<p><a href="http://sigure.jp/news/">凛として時雨</a>が好きですね。</p>
+							<p><a href="http://sigure.jp/news/">凛として時雨</a>が好きですね。</p>
+							<p><a href="http://sigure.jp/news/">凛として時雨</a>が好きですね。</p>
+							<p>ぼくは<a href="hatena" class="keyword">はてな</a>ユーザです。</p>
+							<p>ぼくは<a href="hatena" class="keyword">はてな</a>ユーザです。</p>
+							<p>ぼくは<a href="hatena" class="keyword">はてな</a>ユーザです。</p>
+							<table>
+								<tr>
+									<th>言語</th>
+									<th>最新版</th>
+									<th>登場時期</th>
+								</tr>
+								<tr>
+									<td>Ruby</td>
+									<td>1.9.2</td>
+									<td>1995</td>
+								</tr>
+								<tr>
+									<td>Scala</td>
+									<td>2.8</td>
+									<td>2003</td>
+								</tr>
+								<tr>
+									<td>Io</td>
+									<td>20060704</td>
+									<td>2002</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="comment">
+						<div class="caption">
+							<a name="c" href="aereal/comment">コメントを書く</a>
+						</div>
+					</div>
+				</div>
+				<div class="day">
+					<h2>
+						<a href="aereal/20100930"><span class="date">September 30, 2010</span></a>
+					</h2>
+					<div class="body"></div>
+					<div class="comment">
+						<div class="caption">
+							<a name="c" href="aereal/comment">コメントを書く</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="pager-bottom" class="calendar">
+				<a rel="prev" href="aereal/?of=7" class="prev">&lt;前の7日分</a>&nbsp;<span class="delimiter">|</span>&nbsp;<a rel="next" href="aereal/?of=0" class="next">次の7日分&gt;</a>
+			</div>
+		</div>
+	</body>
+</html>
+<!-- vim: set encoding=euc-jp -->
