@@ -10,19 +10,46 @@
 
 @import "initialize";
 
+$width: 75%;
+
+@mixin clearfix {
+	content: "";
+	display: block;
+	clear: both;
+}
+
 html {
 	background: #fafafa url("images/sadistic-summer/sadistic-summer.png") repeat-y top left;
 }
 
 body {
-	background: transparent url("images/sadistic-summer/bg.png") no-repeat bottom right fixed;
+	background: transparent url("images/sadistic-summer/bg.png") no-repeat ($width + 7%) 100% fixed;
 	color: #17202F;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: serif;
 }
 
 h1,h2,h3,h4,h5,h6 {
 	line-height: 1.125;
-	margin: 1em 0;
+	margin: 0 0 1em;
+}
+
+h1 {
+	position: absolute;
+	top: 0;
+	right: (100% - $width) / 2;
+	height: 1.5em;
+	line-height: 1.5em;
+	color: #17202F;
+	text-shadow: 2px 2px 2px #999;
+	font-size: 300%;
+}
+
+.day > h2 {
+	font-size: 150%;
+}
+
+h3.title {
+	font-size: 200%;
 }
 
 p,
@@ -34,7 +61,10 @@ td {
 	line-height: 1.5;
 }
 
-p,
+p {
+	margin: 1em auto;
+}
+
 pre,
 blockquote,
 div.section > ins,
@@ -44,8 +74,8 @@ ol,
 ul,
 table,
 form {
-	margin-top: 1em;
-	margin-bottom: 1em;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 pre,
@@ -57,13 +87,9 @@ div.section > del {
 	margin-left: auto;
 }
 
-div.body p:after,
-ul.global.navigation:after {
-	content: '.';
-	visibility: hidden;
-	clear: both;
-	display: block;
-	height: 0;
+div.body p::after,
+ul.global.navigation::after {
+	@include clearfix;
 }
 
 pre {
@@ -123,7 +149,7 @@ samp {
 
 code,
 kbd {
-	font-family: Consolas, "Courier New", monospace;
+	font-family: monospace;
 }
 
 var {
@@ -264,123 +290,52 @@ td {
 
 /* == Layout, and something == */
 
-div.banner {
-	position: absolute;
-	top: 0;
-	right: 5px;
-	height: 1.5em;
-	line-height: 1.5em;
-	color: #17202F;
-	text-shadow: 2px 2px 2px #999;
-	font-family: "Courier New", serif;
-	font-size: 250%;
-}
-
-div.section {
+div.section, div.day {
 	margin: 3em 0;
 }
 
-div.body {
-	width: 80%;
+div.day > h2 + div.body > div.section {
+	margin-top: 0;
+}
+
+div.hatena-body {
+	width: $width;
 	margin: 3.75em auto 0;
 	padding-bottom: 1.5em;
 	border-bottom: dotted 1px #5a7993;
 }
 
-ul.global.navigation {
-	width: 80%;
-	margin: 3em auto;
-	border: none;
+#simple-header { display: none }
+
+ul.menu::after {
+	@include clearfix;
 }
 
-ul.global.navigation > li {
-	float: left;
-	width: 25%;
-	height: 2em;
-	line-height: 2em;
-	margin: 0;
-	font-family: "Times New Roman", serif;
-	font-size: 200%;
-}
-
-ul.global.navigation > li:before {
-	display: none;
-}
-
-ul.global.navigation > li > a {
-	display: block;
-	width: 100%;
-	border: none;
-	color: #5a7993;
-	text-shadow: 2px 2px 2px;
-}
-
-ul.global.navigation > li > a:hover,
-ul.global.navigation > li > a:focus {
-	text-decoration: underline;
-}
-
-.local.navigation {
-	width: 80%;
-	min-height: 1.5em;
-	margin: 1em auto;
-	border: none;
-}
-
-.local.navigation > li,
-.local.navigation > li > a {
-	display: block;
-}
-
-.local.navigation > li {
-	float: left;
-	height: 1.5;
-	line-height: 1.5;
-	margin: 0;
-	padding: 0;
-}
-
-.local.navigation > li + li {
-	float: right;
-}
-
-.local.navigation > li:before,
-.local.navigation > li + li > a:before {
-	content: "";
-}
-
-.local.navigation > li > a:before {
-	content: "\AB  ";
-}
-
-.local.navigation > li + li > a:after {
-	content: " \BB";
-}
-
-div.colophon {
-	width: 80%;
-	margin: 6em auto 0;
+.calendar {
 	text-align: right;
 }
 
-dl.resource-info {
-	float: left;
-	margin: 0;
-	border: none;
-	text-align: left;
+.comment {
+	a {
+		font-size: 90%;
+	}
 }
 
-dl.resource-info dt,
-dl.resource-info dd {
-	margin: 0;
+.sectionheader {
+	margin-top: -1em;
+	font-size: 90%;
 }
 
-dl.resource-info dd {
-	margin-left: 11em;
-	margin-top: -1.5em;
+.hatena-module-profile {
+	.hatena-moduletitle { display: none }
+
+	.hatena-profile-image img {
+		float: left;
+		margin: 5px 10px 5px 5px;
+	}
 }
 
-dl.resource-info dt {
-	width: 10em;
-	text-align: right;
+.hatena-module-profile::after {
+	@include clearfix;
 }
+
