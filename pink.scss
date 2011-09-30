@@ -14,7 +14,10 @@
 	* Sub Color[2] => #dddddd => rgb(221, 221, 221)
 */
 
-@import url("../lib/initialize.css");
+@import "initialize";
+@import "clearfix";
+
+$width: 80%;
 
 body {
 	background: #1a1a1a;
@@ -438,4 +441,53 @@ dl.resource-info dd {
 dl.resource-info dt {
 	width: 10em;
 	text-align: right;
+}
+
+div.section, div.day {
+	margin: 3em 0;
+}
+
+div.day > h2 + div.body > div.section {
+	margin-top: 0;
+}
+
+div.hatena-body {
+	width: $width;
+	margin: 3.75em auto 0;
+	padding-bottom: 1.5em;
+	border-bottom: dotted 1px #5a7993;
+}
+
+#simple-header { display: none }
+
+ul.menu::after {
+	@include clearfix;
+}
+
+.calendar {
+	text-align: right;
+}
+
+.comment {
+	a {
+		font-size: 90%;
+	}
+}
+
+.sectionheader {
+	margin-top: -1em;
+	font-size: 90%;
+}
+
+.hatena-module-profile {
+	.hatena-moduletitle { display: none }
+
+	.hatena-profile-image img {
+		float: left;
+		margin: 5px 10px 5px 5px;
+	}
+}
+
+.hatena-module-profile::after {
+	@include clearfix;
 }
