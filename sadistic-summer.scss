@@ -1,0 +1,386 @@
+@charset "UTF-8";
+
+/*
+	= sadistic-summer.css =
+	
+	Author:: Aoki Hanae <http://aereal.org/>
+	Copyright:: (c) 2009 Aoki Hanae
+	License:: <http://creativecommons.org/licenses/by/3.0/>
+*/
+
+@import url("../lib/initialize.css");
+
+html {
+	background: #fafafa url("images/sadistic-summer/sadistic-summer.png") repeat-y top left;
+}
+
+body {
+	background: transparent url("images/sadistic-summer/bg.png") no-repeat bottom right fixed;
+	color: #17202F;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	line-height: 1.125;
+	margin: 1em 0;
+}
+
+p,
+dt,
+dd,
+li,
+th,
+td {
+	line-height: 1.5;
+}
+
+p,
+pre,
+blockquote,
+div.section > ins,
+div.section > del,
+dl,
+ol,
+ul,
+table,
+form {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+pre,
+blockquote,
+div.section > ins,
+div.section > del {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div.body p:after,
+ul.global.navigation:after {
+	content: '.';
+	visibility: hidden;
+	clear: both;
+	display: block;
+	height: 0;
+}
+
+pre {
+	line-height: 1.125;
+	padding: 1.125em 0.5625em 0;
+}
+
+blockquote {
+	padding: 1em 0.5em 0;
+}
+
+blockquote[title][cite]:after,
+blockquote[title]:after,
+blockquote[cite]:after {
+	display: block;
+	margin-top: 1.5em;
+	padding-top: 0.5em;
+	border-top: dotted 1px #aaa;
+	text-align: right;
+}
+
+blockquote[title][cite]:after {
+	content: attr(title) " - " attr(cite);
+}
+
+blockquote[title]:after {
+	content: attr(title);
+}
+
+blockquote[cite]:after {
+	content: attr(cite);
+}
+
+abbr,
+acronym {
+	border-style: dotted;
+	border-width: 0 0 1px 0;
+	cursor: help;
+}
+
+em {
+	font-weight: bold;
+}
+
+strong {
+	padding: 0.1em;
+	background: #5a7993;
+}
+
+code,
+kbd,
+var,
+samp {
+	margin-right: 0.25em;
+	margin-left: 0.25em;
+}
+
+code,
+kbd {
+	font-family: Consolas, "Courier New", monospace;
+}
+
+var {
+	font-style: italic;
+}
+
+a {
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	text-decoration: none;
+}
+
+a:link,
+a:visited {
+	border-style: dotted;
+}
+
+a:link {
+	color: #5a7993;
+}
+
+a:visited {
+	color: #69639a;
+}
+
+a:focus,
+a:hover,
+a:active {
+	outline: none;
+	border-style: solid;
+}
+
+img.figure {
+	float: left;
+	margin: 0 1em 1em 0;
+	text-shadow: 2px 2px 2px;
+}
+
+ol {
+	counter-reset: list-item;
+}
+
+li {
+	margin-left: 1.5em;
+}
+
+* + dt,
+* + dd,
+* + li {
+	margin-top: 0.25em;
+}
+
+dt {
+	margin-left: 1em;
+}
+
+dd {
+	margin-left: 3em;
+}
+
+li {
+	display: block;
+}
+
+li:before {
+	display: inline-block;
+	width: 2em;
+	margin-left: -1em;
+	margin-right: 0.5em;
+	color: #aaa;
+	text-align: center;
+}
+
+ol > li:before {
+	content: counter(list-item) ".";
+	counter-increment: list-item;
+}
+
+ul > li:before {
+	content: "*";
+}
+
+dd > *,
+li > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+hr {
+	height: 1em;
+	border: none;
+}
+
+ins,
+del {
+	display: inline;
+}
+
+ins {
+	text-decoration: underline;
+}
+
+del {
+	color: #9a9a9a;
+	text-decoration: line-through;
+}
+
+div.section > ins,
+div.section > del {
+	display: block;
+	padding: 1em 0.5em 0;
+	text-decoration: none;
+}
+
+div.section > ins[datetime]:before,
+div.section > del[datetime]:before {
+	content: attr(datetime);
+	display: block;
+	margin-bottom: 1em;
+	color: #17202F;
+}
+
+table {
+	border-top: solid 1px #5a7993;
+}
+
+th,
+td {
+	padding: 0.1em 1em 0.1em 0;
+	border-bottom: dotted 1px;
+}
+
+td {
+	border-color: #565656;
+}
+
+
+
+/* == Layout, and something == */
+
+div.banner {
+	position: absolute;
+	top: 0;
+	right: 5px;
+	height: 1.5em;
+	line-height: 1.5em;
+	color: #17202F;
+	text-shadow: 2px 2px 2px #999;
+	font-family: "Courier New", serif;
+	font-size: 250%;
+}
+
+div.section {
+	margin: 3em 0;
+}
+
+div.body {
+	width: 80%;
+	margin: 3.75em auto 0;
+	padding-bottom: 1.5em;
+	border-bottom: dotted 1px #5a7993;
+}
+
+ul.global.navigation {
+	width: 80%;
+	margin: 3em auto;
+	border: none;
+}
+
+ul.global.navigation > li {
+	float: left;
+	width: 25%;
+	height: 2em;
+	line-height: 2em;
+	margin: 0;
+	font-family: "Times New Roman", serif;
+	font-size: 200%;
+}
+
+ul.global.navigation > li:before {
+	display: none;
+}
+
+ul.global.navigation > li > a {
+	display: block;
+	width: 100%;
+	border: none;
+	color: #5a7993;
+	text-shadow: 2px 2px 2px;
+}
+
+ul.global.navigation > li > a:hover,
+ul.global.navigation > li > a:focus {
+	text-decoration: underline;
+}
+
+.local.navigation {
+	width: 80%;
+	min-height: 1.5em;
+	margin: 1em auto;
+	border: none;
+}
+
+.local.navigation > li,
+.local.navigation > li > a {
+	display: block;
+}
+
+.local.navigation > li {
+	float: left;
+	height: 1.5;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+
+.local.navigation > li + li {
+	float: right;
+}
+
+.local.navigation > li:before,
+.local.navigation > li + li > a:before {
+	content: "";
+}
+
+.local.navigation > li > a:before {
+	content: "\AB  ";
+}
+
+.local.navigation > li + li > a:after {
+	content: " \BB";
+}
+
+div.colophon {
+	width: 80%;
+	margin: 6em auto 0;
+	text-align: right;
+}
+
+dl.resource-info {
+	float: left;
+	margin: 0;
+	border: none;
+	text-align: left;
+}
+
+dl.resource-info dt,
+dl.resource-info dd {
+	margin: 0;
+}
+
+dl.resource-info dd {
+	margin-left: 11em;
+	margin-top: -1.5em;
+}
+
+dl.resource-info dt {
+	width: 10em;
+	text-align: right;
+}

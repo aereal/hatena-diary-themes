@@ -1,0 +1,441 @@
+@charset "UTF-8";
+
+/*
+	= pink.css =
+	
+	Author:: Aoki Hanae <http://aereal.org/>
+	Copyright:: (c) 2009 Aoki Hanae
+	License:: <http://creativecommons.org/licenses/by/3.0/>
+*/
+
+/*
+	* Main Color   => #343434 => rgb( 52,  52,  52)
+	* Sub Color[1] => #8F0866 => rgb(197, 115, 178)
+	* Sub Color[2] => #dddddd => rgb(221, 221, 221)
+*/
+
+@import url("../lib/initialize.css");
+
+body {
+	background: #1a1a1a;
+	color: #bdbdbd;
+	font-family: "Segoe UI", Tahoma, Helvetica, Arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	line-height: 1.125;
+	margin: 1em 0;
+	padding-left: 10px;
+	border-style: solid;
+	border-width: 0 0 0 2px;
+	border-color: #8F0866;
+	font-weight: normal;
+}
+
+p,
+dt,
+dd,
+li,
+th,
+td {
+	line-height: 1.5;
+}
+
+p,
+pre,
+blockquote,
+div.section > ins,
+div.section > del,
+dl,
+ol,
+ul,
+table,
+form {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+pre,
+blockquote,
+div.section > ins,
+div.section > del {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+	border: solid 1px #343434;
+	background: #0a0a0a;
+}
+
+pre:after,
+blockquote:after,
+div.section > ins:after,
+div.section > del:after {
+	display: block;
+	color: #8F0866;
+	font-family: "Times New Roman", Times, Helvetica, Arial, sans-serif;
+	font-size: 250%;
+	text-align: right;
+	letter-spacing: -1px;
+}
+
+div.body p:after {
+	content: '.';
+	visibility: hidden;
+	clear: both;
+	display: block;
+	height: 0;
+}
+
+pre {
+	line-height: 1.125;
+	padding: 1.125em 0.5625em 0;
+}
+
+pre:after {
+	content: "Preformatted";
+}
+
+pre.code:after {
+	content: "Code";
+}
+
+blockquote {
+	padding: 1em 0.5em 0;
+}
+
+blockquote:after {
+	content: "Quoted";
+}
+
+abbr,
+acronym {
+	border-style: dotted;
+	border-width: 0 0 1px 0;
+	cursor: help;
+}
+
+em {
+	font-weight: bold;
+}
+
+strong {
+	padding: 0.1em;
+	background: #8F0866;
+}
+
+code,
+kbd,
+var,
+samp {
+	margin-right: 0.25em;
+	margin-left: 0.25em;
+}
+
+code,
+kbd {
+	font-family: Consolas, "Courier New", monospace;
+}
+
+var {
+	font-style: italic;
+}
+
+a {
+	border-style: solid;
+	border-width: 0 0 1px 0;
+	text-decoration: none;
+}
+
+a:link {
+	color: #c94093;
+}
+
+a:visited {
+	border-style: dotted;
+	*color: #714c99;
+	color: #c573b2;
+}
+
+a:focus,
+a:hover,
+a:active {
+	outline: none;
+	border-style: solid;
+	color: #8F0866;
+}
+
+img.figure {
+	float: left;
+	margin: 0 1em 1em 0;
+}
+
+dl,
+ol,
+ul {
+	border-style: solid;
+	border-color: #8F0866;
+	border-width: 0 0 0 2px;
+}
+
+ol {
+	counter-reset: list-item;
+}
+
+li {
+	margin-left: 1.5em;
+}
+
+* + dt,
+* + dd,
+* + li {
+	margin-top: 0.25em;
+}
+
+dt {
+	margin-left: 1em;
+}
+
+dd {
+	margin-left: 3em;
+}
+
+li {
+	display: block;
+}
+
+li:before {
+	display: inline-block;
+	width: 2em;
+	margin-left: -1em;
+	margin-right: 0.5em;
+	text-align: right;
+}
+
+ol > li:before {
+	content: counter(list-item) ".";
+	counter-increment: list-item;
+}
+
+ul > li:before {
+	content: "*";
+}
+
+dd > *,
+li > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+hr {
+	height: 1em;
+	border: none;
+}
+
+ins,
+del {
+	display: inline;
+}
+
+ins {
+	text-decoration: underline;
+}
+
+del {
+	color: #454545;
+	text-decoration: line-through;
+}
+
+div.section > ins,
+div.section > del {
+	display: block;
+	padding: 1em 0.5em 0;
+	color: inherit;
+	text-decoration: none;
+}
+
+div.section > ins[datetime]:before,
+div.section > del[datetime]:before {
+	content: attr(datetime);
+	display: block;
+	margin-bottom: 1em;
+	color: #bdbdbd;
+}
+
+div.section > ins:after {
+	content: "Inserted";
+}
+
+div.section > del:after {
+	content: "Deleted";
+}
+
+table {
+	border-top: solid 1px #8F0866;
+}
+
+th,
+td {
+	padding: 0.1em 1em 0.1em 0;
+	border-bottom: dotted 1px;
+}
+
+td {
+	border-color: #565656;
+}
+
+
+
+/* == Layout, and something == */
+
+div.banner {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+	z-index: -1;
+	text-align: right;
+}
+
+div.banner:before {
+	content: url("images/pink/banner.png");
+	display: block;
+	margin-right: -125px;
+}
+
+div.section {
+	margin: 7.5% 0;
+}
+
+div.body {
+	width: 80%;
+	margin: 400px auto 0;
+	padding-bottom: 5em;
+	border-bottom: dotted 1px #2a2a2a;
+}
+
+ul.global.navigation {
+	position: relative;
+	left: 50%;
+	float: left;
+	margin: 5em auto;
+	border: none;
+}
+
+ul.global.navigation + * {
+	clear: both;
+}
+
+ul.global.navigation > li {
+	position: relative;
+	left: -50%;
+	display: inline;
+	width: 5em;
+	height: 2em;
+	line-height: 2em;
+	float: left;
+	margin: 0;
+	border-style: solid;
+	border-width: 0 1px 0 1px;
+	border-color: #343434;
+	font-size: 125%;
+	text-align: center;
+}
+
+ul.global.navigation > li + li {
+	border-width: 0 1px 0 0;
+}
+
+ul.global.navigation > li:before {
+	display: none;
+}
+
+ul.global.navigation > li > a {
+	display: block;
+	width: 100%;
+	border: none;
+}
+
+.local.navigation {
+	width: 80%;
+	min-height: 1.5em;
+	margin: 1em auto;
+	border: none;
+}
+
+.local.navigation > li,
+.local.navigation > li > a {
+	display: inline-block;
+}
+
+.local.navigation > li {
+	float: left;
+	height: 1.5;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+}
+
+.local.navigation > li + li {
+	float: right;
+}
+
+.local.navigation > li:before {
+	content: "";
+}
+
+.local.navigation > li > a {
+	padding: 2px 5px;
+	border: solid 1px #8F0866;
+	color: #ddd;
+	background: #2a2a2a;
+}
+
+.local.navigation > li > a:hover,
+.local.navigation > li > a:focus {
+	color: #8F0866;
+}
+
+.local.navigation > li > a:before {
+	content: "\AB  ";
+}
+
+.local.navigation > li + li > a:before {
+	content: "";
+}
+
+.local.navigation > li + li > a:after {
+	content: " \BB";
+}
+
+div.colophon {
+	width: 80%;
+	margin: 10em auto 3em;
+	text-align: right;
+}
+
+dl.resource-info {
+	float: left;
+	margin: 0;
+	border: none;
+	text-align: left;
+}
+
+dl.resource-info dt,
+dl.resource-info dd {
+	margin: 0;
+}
+
+dl.resource-info dd {
+	margin-left: 11em;
+	margin-top: -1.5em;
+	padding-left: 1em;
+	border-width: 0 0 0 1px;
+	border-style: solid;
+	border-color: #ddd;
+}
+
+dl.resource-info dt {
+	width: 10em;
+	text-align: right;
+}
