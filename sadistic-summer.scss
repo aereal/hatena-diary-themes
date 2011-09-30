@@ -9,14 +9,9 @@
 */
 
 @import "initialize";
+@import "clearfix"
 
 $width: 75%;
-
-@mixin clearfix {
-	content: "";
-	display: block;
-	clear: both;
-}
 
 html {
 	background: #fafafa url("images/sadistic-summer/sadistic-summer.png") repeat-y top left;
